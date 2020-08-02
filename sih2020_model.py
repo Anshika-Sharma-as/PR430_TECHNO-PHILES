@@ -104,10 +104,6 @@ CLASSES = [
     'toothbrush', 
 ]
 
-#targated classes to demonstration
-targated_classes = ['person', 'car', 'stop sign', 'traffic light', 'knife', 'motorcycle']
-#defined anomaly list declaration
-
 # colors for visualization
 COLORS = [[0.000, 0.447, 0.741]]
 
@@ -155,7 +151,7 @@ def detect(im, model, transform):
 import math
 import cv2
 cnt = 0
-videoFile = "1.mp4"
+videoFile = "3.mp4"
 imagesFolder = "frames"
 cap = cv2.VideoCapture(videoFile)
 frameRate = cap.get(5) #frame rate
