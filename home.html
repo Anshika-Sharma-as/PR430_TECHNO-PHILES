@@ -45,10 +45,10 @@ SSE
          
       </style> 
 <body style="background-color:black;
-             background-image: url('{%static "image/b2g.png"%}');
-             background-color: black;
-             background-repeat:no-repeat;
-             background-size: cover;">
+  <!--background-image: url('{%static "image/b2g.png"%}');--> 
+ background-color: black;
+ background-repeat:no-repeat;
+background-size: cover;">
 <center>
 <div style="text-align:center; 
 color:pink; 
@@ -70,12 +70,14 @@ width: 40%;"><B><U>SMART</u> <u> SECURITY</u> <u>EYE </u><u>(SSE)</U></B></div><
 <span>
  <div class="leftdiv"> 
 RAW IMAGE: 
+<!--<img src={{raw_url}} height='600' width='600'>-->
+
 
 <video width=600 height=600 autoplay loop>
   <source src={{raw_url}} type="video/mp4">
   <source src={{raw_url}} type="video/ogg">
 Your browser does not support the video tag.
-</video> 
+</video>
 </div>
 
 <div class="rightdiv">
