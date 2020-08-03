@@ -1,0 +1,91 @@
+{%load static %}
+<html>
+<head>
+<title>
+SSE
+</title>
+</head>
+<style type=text/css> 
+         .leftdiv 
+         { 
+         float: left; 
+         } 
+         .rightdiv 
+         { 
+         float: right; 
+         } 
+         div{ 
+         
+         color: pink; 
+         background-color: black;
+         width: 40%; 
+         padding:50px;  
+         border:1px solid pink;  
+         border-radius:20px; 
+         font-size: 50px;
+         opacity: 1.0;
+         display: inline-block;
+
+         }       
+         .button {
+         background-color: black;
+         opacity: 0.8;
+         border:1px solid pink;  
+         border-radius:20px; 
+         color: white;
+         padding: 10px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 24px;
+        cursor: pointer;
+         
+         
+}
+         
+      </style> 
+<body style="background-color:black;
+  <!--background-image: url('{%static "image/b2g.png"%}');--> 
+ background-color: black;
+ background-repeat:no-repeat;
+background-size: cover;">
+<center>
+<div style="text-align:center; 
+color:pink; 
+font-size:52px;  
+padding:50px;
+opacity: 0.9;
+width: 40%;"><B><U>SMART</u> <u> SECURITY</u> <u>EYE </u><u>(SSE)</U></B></div></center>
+<br><br>
+<button class =button>
+<form action="external" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" name="video" required>
+
+<input type="submit" value="Execute">
+</button>
+<br> <br>
+
+{% if raw_url or edit_url %}
+<span>
+ <div class="leftdiv"> 
+RAW IMAGE: 
+<!--<img src={{raw_url}} height='600' width='600'>-->
+
+
+<video width=600 height=600 autoplay loop>
+  <source src={{raw_url}} type="video/mp4">
+  <source src={{raw_url}} type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<div class="rightdiv">
+PROCESSED IMAGE:
+<img src={{edit_url}} height=600 width=600>
+</div>
+</span>
+{% endif %}
+</form>
+</body>
+</html>
